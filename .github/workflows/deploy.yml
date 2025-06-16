@@ -1,0 +1,22 @@
+name: Deploy to GoDaddy
+
+on:
+push:
+branches:
+- main # Set this to your default branch
+
+jobs:
+deploy:
+runs-on: ubuntu-latest
+steps:
+- name: Checkout code
+uses: actions/checkout@v2
+
+- name: Set up SSH
+uses: webfactory/ssh-agent@v0.5.3
+with:
+ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+- name: Deploy to GoDaddy
+run: |
+rsync -avz --delete ./ z9af0jynvsu1@208.109.70.186:home/z9af0jynvsu1/public_html/
