@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Help Center</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --blue: #0052ff;
+      --white: #ffffff;
+      --light: #f5f7fa;
+      --gray: #cbd5e1;
+      --dark: #1e293b;
+      --accent: #22c55e;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--white);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: var(--accent);
+      color: white;
+      padding: 10px 15px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 16px;
+      z-index: 1000;
+    }
+
+    .top-bar a {
+      color: #ffffff;
+      text-decoration: underline;
+      margin-left: 5px;
+    }
+
+    header {
+      background: var(--blue);
+      padding: 1rem 2rem;
+    }
+
+    .header-content {
+      text-align: center;
+    }
+
+    header h1 {
+      color: var(--white);
+      font-size: 2.1rem;
+      font-weight: bold;
+      letter-spacing: -0.5px;
+    }
+
+    main {
+      padding: 1rem 0;
+    }
+
+    .welcome-section {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .welcome-section h2 {
+      font-size: 2.2rem;
+      color: var(--dark);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .welcome-section p {
+      font-size: 1.2rem;
+      color: #64748b;
+      font-weight: 300;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      padding: 2rem 1.5rem;
+      border: 1px solid #bfdbfe; /* Light blue border */
+      border-left: 4px solid var(--blue); /* Accent border */
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    }
+
+    .service-card:hover {
+      border-color: var(--blue);
+      box-shadow: 0 10px 25px rgba(0,82,255,0.08);
+      transform: translateY(-3px);
+    }
+
+    .service-card h3 {
+      font-size: 1.3rem;
+      color: var(--dark);
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+    }
+
+    .service-card p {
+      color: #64748b;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    footer {
+      background: var(--light);
+      padding: 2rem 0;
+      margin-top: 2rem;
+    }
+
+    .footer-content {
+      text-align: center;
+      color: #64748b;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      .welcome-section h2 {
+        font-size: 1.8rem;
+      }
+
+      .welcome-section p {
+        font-size: 1.1rem;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.9rem;
+      }
+
+      .welcome-section h2 {
+        font-size: 1.6rem;
+      }
+
+      .service-card {
+        padding: 1.8rem 1.2rem;
+      }
+    }
+
+    .call-now-section {
+  text-align: center;
+  margin: 2rem 2rem;
+}
+    .call-now-below-section {
+  text-align: center;
+  /* margin: 2rem 2rem; */
+}
+
+.call-now-btn {
+  display: inline-block;
+  background-color: #0052ff; /* Adjust as per your theme */
+  color: #fff;
+  padding: 0.5rem 2rem;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.call-now-btn:hover {
+  background-color: #003bbd;
+}
+
+
+  /* header {
+            background-color: #fff;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 20px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        } */
+/* 
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        } */
+/* 
+        h1 {
+            color: #333;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-top: 11px;
+            white-space: nowrap;
+        } */
+
+        .search-container {
+            flex: 1;
+            max-width: 500px;
+            position: relative;
+            margin:auto;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 12px 45px 12px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .search-input:focus {
+            border-color: #0052ff;
+        }
+
+        .search-input::placeholder {
+            color: #999;
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            color: #666;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .search-icon:hover {
+            color: #0052ff;
+        }
+
+  
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+                align-items: stretch;
+            }
+
+            h1 {
+                text-align: center;
+                font-size: 1.5rem;
+            }
+
+            .search-container {
+                max-width: none;
+            }
+        }
+
+        
+
+  </style>
+</head>
+<body>
+  <!-- <div class="top-bar">
+    Talk to us - <a href="tel:+1-866-450-7470">+1-866-450-7470</a>
+  </div> -->
+<header>
+        <div class="container">
+            <div class="header-content">
+                <h1 style="margin-top:11px;">
+                    <!-- Coinbase  -->
+                    Help Center
+                </h1>
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search for help...">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </header>
+
+ <main>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+  <style>
+     .services-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .services-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .services-header h2 {
+            color: #333;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .services-header p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .services-slider {
+            position: relative;
+            overflow: hidden;
+            background: white;
+            border-radius: 8px;
+            /* box-shadow: 0 2px 10px rgba(0,0,0,0.1); */
+        }
+
+        .services-grid {
+            display: flex;
+            transition: transform 0.3s ease;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .service-card {
+            min-width: 300px;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 24px;
+            transition: transform 0.2s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .service-card h3 {
+            color: #333;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.5;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            border: 1px solid #ddd;
+            width: 40px;
+            height: 40px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: #333;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.2s ease;
+            z-index: 10;
+        }
+
+        .nav-arrow:hover {
+            background: #f8f8f8;
+            border-color: #ccc;
+        }
+
+        .nav-arrow.prev {
+            left: 10px;
+        }
+
+        .nav-arrow.next {
+            right: 10px;
+        }
+
+        .nav-arrow:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .nav-arrow:disabled:hover {
+            background: white;
+            border-color: #ddd;
+        }
+
+        .indicators {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .indicator.active {
+            background: #333;
+        }
+
+        @media (max-width: 768px) {
+            .service-card {
+                min-width: 280px;
+            }
+            
+            .nav-arrow {
+                width: 36px;
+                height: 36px;
+                font-size: 1rem;
+            }
+            
+            .services-header h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        .service-card i {
+  display: block;
+  margin-bottom: 10px;
+}
+
+
+
+  </style>
+
+  <style>
+  .icon-heading {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    margin-bottom: 10px;
+  }
+
+  .icon-heading i {
+    flex-shrink: 0;
+  }
+
+  .icon-heading h3 {
+    margin: 0;
+    font-size: 1.25rem;
+  }
+</style>
+
+<div style="background: #e6efff;
+    padding: 1rem 2rem;
+    margin-top: -14px;
+    margin-bottom: 34px;
+">
+  
+  <section class="welcome-section">
+<h2>Your Help, Simplified</h2>
+
+    <p>Access our range of support services to get the assistance you need—quick, reliable, and stress-free.</p>
+  </section>
+  
+  
+</div>
+<style>
+  .call-now-wrapper {
+    display: flex;
+    gap: 20px; /* spacing between buttons */
+    flex-wrap: wrap; /* wrap on smaller screens */
+    justify-content: center; /* center align */
+    margin-top: 20px;
+  }
+
+  .call-now-btn {
+    /* background-color: #007bff; */
+    color: white;
+    /* padding: 12px 24px; */
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+
+  .call-now-btn:hover {
+    background-color: #0056b3;
+  }
+</style>
+
+<section class="call-now-wrapper" style="margin-bottom: 10px;">
+  <a href="tel:+1-833-319-6348" class="call-now-btn">Talk to us</a>
+  <a href="tel:+1-833-319-6348" class="call-now-btn">Submit a Ticket</a>
+</section>
+
+
+
+  <div class="container">
+   
+<!-- ////////////////////////////////FOR Safe OCNTENT -->
+
+<div class="services-container">
+        <!-- <div class="services-header">
+            <h2>Our Services</h2>
+            <p>Comprehensive support solutions tailored to your needs</p>
+        </div> -->
+        
+        <div class="services-slider">
+            <button class="nav-arrow prev" id="prevBtn">‹</button>
+            <button class="nav-arrow next" id="nextBtn">›</button>
+            
+           <div class="services-grid" id="servicesGrid">
+  <div class="service-card">
+      <div class="icon-heading">
+
+        <h3>24/7 Assistance</h3>
+        <i class="fas fa-headset fa-2x" style="color:#0052ff; margin-bottom: 10px;"></i>
+    </div>
+    <p>Reach out to us anytime—day or night—for immediate assistance with your questions or concerns.</p>
+  </div>
+
+  <div class="service-card">
+      <div class="icon-heading">
+
+        <h3>Skilled Team</h3>
+        <i class="fas fa-user-check fa-2x" style="color:#0052ff; margin-bottom: 10px;"></i>
+    </div>
+    <p>Our experienced team is committed to providing precise and effective solutions with care and professionalism.</p>
+  </div>
+
+  <div class="service-card">
+      <div class="icon-heading">
+
+        <h3>Swift Resolution</h3>
+        <i class="fas fa-bolt fa-2x" style="color:#0052ff; margin-bottom: 10px;"></i>
+    </div>
+    <p>We focus on fast, efficient problem-solving so you can stay on track without interruptions.</p>
+  </div>
+
+  <div class="service-card">
+      <div class="icon-heading">
+
+        <h3>All-in-One Help</h3>
+        <i class="fas fa-tools fa-2x" style="color:#0052ff; margin-bottom: 10px;"></i>
+    </div>
+    <p>From technical issues to general queries, we're here with answers that meet all your support needs.</p>
+  </div>
+
+  <div class="service-card">
+      <div class="icon-heading">
+
+        <h3>Data Protection</h3>
+        <i class="fas fa-shield-alt fa-2x" style="color:#0052ff; margin-bottom: 10px;"></i>
+    </div>
+    <p>Your privacy is our priority. We handle your data with the highest level of confidentiality and care.</p>
+  </div>
+
+  <div class="service-card">
+      <div class="icon-heading">
+
+        <h3>Get in Touch</h3>
+        <i class="fas fa-envelope-open-text fa-2x" style="color:#0052ff; margin-bottom: 10px;"></i>
+    </div>
+    <p>Don't wait—reach out today and experience the dedicated support you deserve. We're just a click away.</p>
+  </div>
+</div>
+
+        </div>
+        
+        <div class="indicators" id="indicators"></div>
+    </div>
+
+    <script>
+        class ServicesSlider {
+            constructor() {
+                this.grid = document.getElementById('servicesGrid');
+                this.prevBtn = document.getElementById('prevBtn');
+                this.nextBtn = document.getElementById('nextBtn');
+                this.indicatorsContainer = document.getElementById('indicators');
+                this.cards = document.querySelectorAll('.service-card');
+                this.currentIndex = 0;
+                this.cardWidth = 320; // card width + gap
+                this.cardsPerView = this.getCardsPerView();
+                this.maxIndex = Math.max(0, this.cards.length - this.cardsPerView);
+                
+                this.init();
+            }
+            
+            init() {
+                this.createIndicators();
+                this.updateButtons();
+                this.bindEvents();
+                this.handleResize();
+            }
+            
+            getCardsPerView() {
+                const containerWidth = this.grid.parentElement.offsetWidth - 40; // padding
+                return Math.floor(containerWidth / this.cardWidth);
+            }
+            
+            createIndicators() {
+                this.indicatorsContainer.innerHTML = '';
+                const totalSlides = this.maxIndex + 1;
+                
+                for (let i = 0; i < totalSlides; i++) {
+                    const indicator = document.createElement('div');
+                    indicator.className = 'indicator';
+                    if (i === 0) indicator.classList.add('active');
+                    indicator.addEventListener('click', () => this.goToSlide(i));
+                    this.indicatorsContainer.appendChild(indicator);
+                }
+            }
+            
+            updateButtons() {
+                this.prevBtn.disabled = this.currentIndex === 0;
+                this.nextBtn.disabled = this.currentIndex >= this.maxIndex;
+            }
+            
+            updateIndicators() {
+                const indicators = document.querySelectorAll('.indicator');
+                indicators.forEach((indicator, index) => {
+                    indicator.classList.toggle('active', index === this.currentIndex);
+                });
+            }
+            
+            slide() {
+                const translateX = -this.currentIndex * this.cardWidth;
+                this.grid.style.transform = `translateX(${translateX}px)`;
+                this.updateButtons();
+                this.updateIndicators();
+            }
+            
+            next() {
+                if (this.currentIndex < this.maxIndex) {
+                    this.currentIndex++;
+                    this.slide();
+                }
+            }
+            
+            prev() {
+                if (this.currentIndex > 0) {
+                    this.currentIndex--;
+                    this.slide();
+                }
+            }
+            
+            goToSlide(index) {
+                this.currentIndex = Math.max(0, Math.min(index, this.maxIndex));
+                this.slide();
+            }
+            
+            bindEvents() {
+                this.nextBtn.addEventListener('click', () => this.next());
+                this.prevBtn.addEventListener('click', () => this.prev());
+                
+                // Keyboard navigation
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowLeft') this.prev();
+                    if (e.key === 'ArrowRight') this.next();
+                });
+                
+                // Touch/swipe support
+                let startX = 0;
+                let isDragging = false;
+                
+                this.grid.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                    isDragging = true;
+                });
+                
+                this.grid.addEventListener('touchmove', (e) => {
+                    if (!isDragging) return;
+                    e.preventDefault();
+                });
+                
+                this.grid.addEventListener('touchend', (e) => {
+                    if (!isDragging) return;
+                    isDragging = false;
+                    
+                    const endX = e.changedTouches[0].clientX;
+                    const diffX = startX - endX;
+                    
+                    if (Math.abs(diffX) > 50) {
+                        if (diffX > 0) this.next();
+                        else this.prev();
+                    }
+                });
+            }
+            
+            handleResize() {
+                let resizeTimeout;
+                window.addEventListener('resize', () => {
+                    clearTimeout(resizeTimeout);
+                    resizeTimeout = setTimeout(() => {
+                        this.cardsPerView = this.getCardsPerView();
+                        this.maxIndex = Math.max(0, this.cards.length - this.cardsPerView);
+                        this.currentIndex = Math.min(this.currentIndex, this.maxIndex);
+                        this.createIndicators();
+                        this.slide();
+                    }, 250);
+                });
+            }
+        }
+        
+        // Initialize the slider when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new ServicesSlider();
+        });
+    </script>
+
+
+<!-- ////////////////////////////////FOR MONEY OCNTENT -->
+
+      <!-- <section class="services-grid">
+      <div class="service-card">
+        <h3>Trouble Logging In?</h3>
+          <p>Reset your login credentials and get back into your account quickly.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Authentication Not Working?</h3>
+          <p>Resolve two-factor authentication errors and secure your account access.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Missing Transactions</h3>
+          <p>Check on delayed deposits or withdrawals and learn what to do next.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Bank Linking Issues</h3>
+          <p>Follow easy steps to connect your financial institution without errors.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Unusual Account Activity</h3>
+          <p>Identify and report unexpected changes or security threats in your account.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Buying & Selling Crypto</h3>
+          <p>Get tips on trading digital currencies using our platform's features.</p>
+      </div>
+    </section> -->
+
+
+
+  </div>
+</main>
+ <style>
+        .help-topics-grid {
+            display: flex;
+            gap: 60px;
+            padding: 40px 20px;
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .topic-column {
+            flex: 1;
+        }
+
+        .topic-column h4 {
+            color: #0a2943;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .topic-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            border-top: 1px solid #eee;
+        }
+
+        .topic-list li {
+            border-bottom: 1px solid #eee;
+        }
+
+        .topic-list a {
+            text-decoration: none;
+            color: #0a0a0a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+            font-size: 15px;
+            transition: color 0.2s ease;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .topic-list a.highlight {
+            color: #2e70ff;
+        }
+
+        .topic-list a:hover {
+            color: #2e70ff;
+        }
+
+        .topic-list a span {
+            font-size: 18px;
+            color: #666;
+            transition: transform 0.3s ease;
+        }
+
+        .topic-list a.expanded span {
+            transform: rotate(90deg);
+        }
+
+        .topic-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background-color: #f8f9fa;
+            border-left: 3px solid #2e70ff;
+        }
+
+        .topic-content.expanded {
+            max-height: 300px;
+        }
+
+        .topic-content-inner {
+            padding: 20px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .topic-content h5 {
+            color: #0a2943;
+            margin-bottom: 12px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .topic-content p {
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .topic-content ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .topic-content li {
+            margin-bottom: 6px;
+            font-size: 14px;
+            border: none;
+        }
+
+        .topic-content .steps {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 10px 0;
+        }
+
+        .topic-content .note {
+            background-color: #e3f2fd;
+            padding: 12px;
+            border-radius: 6px;
+            margin: 10px 0;
+            border-left: 3px solid #2196f3;
+        }
+
+        @media (max-width: 768px) {
+            .help-topics-grid {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+    </style>
+<!-- 
+    <h2 style="text-align:center; font-size:2rem">Recommended Reads</h2>
+
+  <section class="help-topics-grid">
+  <div class="topic-column">
+    <h4>Managing My Account</h4>
+    <ul class="topic-list">
+      <li>
+        <a href="#" data-target="returning-customers">Guide for Returning Users <span>›</span></a>
+        <div id="returning-customers" class="topic-content">
+          <div class="topic-content-inner">
+            <h5>Welcome Back!</h5>
+            <p>If you're coming back after some time, here’s how to get started again:</p>
+            <div class="steps">
+              <strong>Steps to Reconnect:</strong>
+              <ul>
+                <li>Sign in using your existing account details</li>
+                <li>Complete any updated identity verification steps</li>
+                <li>Check and refresh your security settings</li>
+                <li>Explore new features or changes</li>
+              </ul>
+            </div>
+            <div class="note">
+              <strong>Note:</strong> For your security, you may be asked to re-verify your identity if security policies have changed.
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <a href="#" class="highlight" data-target="two-step">Troubleshooting 2-Step Verification <span>›</span></a>
+        <div id="two-step" class="topic-content">
+          <div class="topic-content-inner">
+            <h5>2FA Help & Troubleshooting</h5>
+            <p>Struggling with two-factor authentication? Try these solutions:</p>
+            <div class="steps">
+              <strong>Fixes for Common Problems:</strong>
+              <ul>
+                <li><strong>SMS not received:</strong> Ensure signal is strong and try resending</li>
+                <li><strong>Authenticator issues:</strong> Sync your device’s clock with network time</li>
+                <li><strong>Lost device:</strong> Use backup codes or contact our support</li>
+                <li><strong>Invalid codes:</strong> Double-check you’re using the latest code</li>
+              </ul>
+            </div>
+            <div class="note">
+              <strong>Reminder:</strong> Backup codes are your emergency access—store them securely.
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <a href="#" data-target="complaint">Filing a Complaint <span>›</span></a>
+        <div id="complaint" class="topic-content">
+          <div class="topic-content-inner">
+            <h5>How to File a Complaint</h5>
+            <p>We value your feedback and are committed to resolving any concerns quickly.</p>
+            <div class="steps">
+              <strong>Steps to Submit a Complaint:</strong>
+              <ul>
+                <li>Check our Help Center for solutions first</li>
+                <li>Contact our support team through the help portal</li>
+                <li>Provide a full description and any related details</li>
+                <li>Keep a copy of your communication for reference</li>
+              </ul>
+            </div>
+            <p><strong>What to Include:</strong> Account info, screenshots, transaction IDs, and a clear explanation of the issue.</p>
+            <div class="note">
+              <strong>Response Time:</strong> Most complaints receive acknowledgment within 24 hours and are resolved within 5–7 business days.
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="topic-column">
+    <h4>Trading and Funding</h4>
+    <ul class="topic-list">
+      <li>
+        <a href="#" data-target="cash-out">Withdraw Your Funds <span>›</span></a>
+        <div id="cash-out" class="topic-content">
+          <div class="topic-content-inner">
+            <h5>Cashing Out Your Balance</h5>
+            <p>Need to withdraw your funds? Follow these steps to complete the process:</p>
+            <div class="steps">
+              <strong>Withdrawal Process:</strong>
+              <ul>
+                <li>Open your Portfolio and choose an asset</li>
+                <li>Select “Sell” and enter the amount</li>
+                <li>Pick your preferred withdrawal method (bank account recommended)</li>
+                <li>Confirm and complete the transaction</li>
+              </ul>
+            </div>
+            <p><strong>Timing:</strong> Bank withdrawals usually take 1–3 business days.</p>
+            <div class="note">
+              <strong>Tip:</strong> Bank transfers generally have lower fees than card withdrawals.
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <a href="#" data-target="unable-buy">Why Can’t I Buy Crypto? <span>›</span></a>
+        <div id="unable-buy" class="topic-content">
+          <div class="topic-content-inner">
+            <h5>Purchase Restrictions Explained</h5>
+            <p>If you're unable to buy crypto, these are the most common reasons:</p>
+            <div class="steps">
+              <strong>Potential Issues:</strong>
+              <ul>
+                <li><strong>Low balance:</strong> Check your payment method</li>
+                <li><strong>Purchase limits:</strong> You may have reached your daily or weekly limit</li>
+                <li><strong>Card/bank problems:</strong> Make sure your method is valid and supported</li>
+                <li><strong>Location restrictions:</strong> Some regions have limitations</li>
+                <li><strong>Account status:</strong> Ensure your account is fully verified</li>
+              </ul>
+            </div>
+            <div class="note">
+              <strong>Quick Fix:</strong> Try switching to a different payment method or wait until your limit resets.
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <a href="#" data-target="fees">Understanding Fees & Pricing <span>›</span></a>
+        <div id="fees" class="topic-content">
+          <div class="topic-content-inner">
+            <h5>How Fees Work</h5>
+            <p>We’re committed to transparency. Here’s a breakdown of how fees are calculated:</p>
+            <div class="steps">
+              <strong>Types of Fees:</strong>
+              <ul>
+                <li><strong>Transaction Fee:</strong> Varies by location, payment method, and amount</li>
+                <li><strong>Spread:</strong> Typically ~0.50% per crypto trade</li>
+                <li><strong>Network Fees:</strong> Paid to blockchain miners; depends on congestion</li>
+              </ul>
+            </div>
+            <p><strong>Pro Tip:</strong> Use platforms with lower trading fees if you trade frequently.</p>
+            <div class="note">
+              <strong>Transparency:</strong> All fees are displayed before you confirm any transaction.
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section> -->
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const topicLinks = document.querySelectorAll('.topic-list a[data-target]');
+            
+            topicLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('data-target');
+                    const targetContent = document.getElementById(targetId);
+                    const arrow = this.querySelector('span');
+                    
+                    // Close all other expanded items in the same column
+                    const currentColumn = this.closest('.topic-column');
+                    const otherContents = currentColumn.querySelectorAll('.topic-content.expanded');
+                    const otherLinks = currentColumn.querySelectorAll('.topic-list a.expanded');
+                    
+                    otherContents.forEach(content => {
+                        if (content !== targetContent) {
+                            content.classList.remove('expanded');
+                        }
+                    });
+                    
+                    otherLinks.forEach(otherLink => {
+                        if (otherLink !== this) {
+                            otherLink.classList.remove('expanded');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    if (targetContent.classList.contains('expanded')) {
+                        targetContent.classList.remove('expanded');
+                        this.classList.remove('expanded');
+                    } else {
+                        targetContent.classList.add('expanded');
+                        this.classList.add('expanded');
+                    }
+                });
+            });
+        });
+    </script>
+<!-- <section class="call-now-section">
+  <a href="tel:+1-833-319-6348" class="call-now-btn">Talk to us: +1-833-319-6348</a>
+</section> -->
+
+
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      © 2025 
+      <!-- Coinbase -->
+       Help Center  – Your peace of mind is our promise.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
