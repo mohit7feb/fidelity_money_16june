@@ -19,4 +19,4 @@ ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
 - name: Deploy to GoDaddy
 run: |
-rsync -avz --delete ./ z9af0jynvsu1@208.109.70.186:home/z9af0jynvsu1/fidelity_money
+rsync -avz --delete ./ z9af0jynvsu1@208.109.70.186:/home/z9af0jynvsu1/fidelity_money
